@@ -1,0 +1,18 @@
+k=int(input())
+s=input().strip()
+ 
+from collections import defaultdict
+ 
+mp=defaultdict(int)
+mp[0]=1
+ 
+prefix=0
+ans=0
+ 
+for c in s:
+    if c=='1':
+        prefix+=1
+    ans+=mp[prefix-k]
+    mp[prefix]+=1
+ 
+print(ans)
